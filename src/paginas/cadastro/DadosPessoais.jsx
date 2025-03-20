@@ -55,6 +55,10 @@ const DadosPessoais = () => {
                     errors.nome = "Campo obrigatório!";
                 }
 
+                if (!values.cidade) {
+                    errors.cidade = "Campo obrigatório!";
+                }
+
                 if (!values.telefone) {
                     errors.telefone = "Campo obrigatório!";
                 } else if (!/^\d{11}$/i.test(values.telefone)) {
@@ -71,6 +75,10 @@ const DadosPessoais = () => {
                     errors.email = "E-mail inválido";
                 }
 
+                if (!values.senha) {
+                    errors.senha = "Campo obrigatório!";
+                }
+
                 if (!values.confirmarSenha) {
                     errors.confirmarSenha = "Campo obrigatório!";
                 } else if (values.senha !== values.confirmarSenha) {
@@ -78,6 +86,9 @@ const DadosPessoais = () => {
                 }
 
                 return errors;
+            }}
+            onSubmit={(values) => {
+                console.log("Campos enviados", values);
             }}
         >
             {(formik) => (
